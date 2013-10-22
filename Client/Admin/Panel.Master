@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Panel.master.cs" Inherits="Client.Admin.Panel" %>
+
+<%@ Register Src="~/Admin/ucLeftMenu.ascx" TagPrefix="uc1" TagName="ucLeftMenu" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container" style="margin: auto; width: 1000px; height: 600px">
+
+
+
+            <div id="header" style="float: left; background-color: ActiveCaption; width: 100%; height: 150px;">
+
+                <p style="font-size: 50pt; margin-left: 40px;">BenimWebim</p>
+
+            </div>
+
+            <div id="navMenu" style="float: left; width: 100%; height: 40px; margin-top: 10px; background-color: bisque">
+                <% if (Membership.GetUser() != null)
+                   {%>
+
+                <a href="Categories.aspx" style="text-decoration: none; color: black; font-size: 20pt; margin-left: 50px">Kategoriler</a>
+                <a href="Products.aspx" style="text-decoration: none; color: black; font-size: 20pt; margin-left: 50px">Ürünler</a>
+                <a href="login.aspx?logout=true" style="text-decoration: none; color: black; font-size: 20pt; margin-left: 50px">Çıkış</a>
+                <% } %>
+            </div>
+
+
+            <div id="leftMenu" style="float: left; width: 250px; height: 300px; margin-top: 10px">
+
+                <% if (Membership.GetUser() != null)
+                   { %>
+                <uc1:ucLeftMenu runat="server" ID="ucLeftMenu" />
+
+                <% } %>
+            </div>
+
+            <div id="content" style="float: right; margin-top: 10px; width: 720px; height: 300px; padding: 10px;">
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+
+            <div id="footer" style="float: left; width: 100%; height: 50px; margin-top: 10px; text-align: center; font-size: 15pt; color: #808080; padding-top: 20px; border-radius: 10px; background-color: bisque">CopyRight 2013 Hatice Nur Yerlikaya &copy;</div>
+
+
+        </div>
+    </form>
+</body>
+</html>

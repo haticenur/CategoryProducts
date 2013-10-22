@@ -1,0 +1,21 @@
+﻿.contactForm {
+    float:left;
+    width:420px;
+    margin-left:120px;
+}
+.contactItem {
+    float:left;
+    font-size:20px;
+    width:156px;
+    margin-top:20px;
+
+}
+.contactText {
+    float:right;
+    width:244px;
+
+}
+.contactForm textarea {
+
+    height:100px;
+}
